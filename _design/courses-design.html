@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Courses - Design Mockup</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f9fafb; }
+.screen { min-height: 100dvh; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+
+<!-- ========== COURSES LIST ========== -->
+<div class="screen">
+  <div style="background:white;padding:48px 20px 16px;border-bottom:1px solid #f3f4f6;">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <h1 style="font-size:22px;font-weight:700;color:#111827;">📋 Liste de courses</h1>
+      <span style="font-size:13px;color:#9ca3af;">4 articles</span>
+    </div>
+  </div>
+
+  <div style="flex:1;padding:16px 20px;display:flex;flex-direction:column;gap:10px;padding-bottom:100px;">
+    <!-- Items same as before -->
+    <div style="display:flex;align-items:center;gap:10px;background:white;border-radius:14px;padding:14px 16px;box-shadow:0 1px 3px rgba(0,0,0,0.05);border:1px solid #f3f4f6;">
+      <div style="font-size:24px;width:36px;text-align:center;">🥩</div>
+      <div style="flex:1;min-width:0;">
+        <div style="font-weight:600;color:#111827;font-size:15px;">Steak haché</div>
+        <div style="font-size:12px;color:#9ca3af;">500g · Viande</div>
+      </div>
+      <div style="width:40px;height:40px;border-radius:50%;border:2px solid #d1d5db;display:flex;align-items:center;justify-content:center;font-size:18px;color:#d1d5db;cursor:pointer;flex-shrink:0;">✓</div>
+      <div style="width:40px;height:40px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:18px;color:white;cursor:pointer;flex-shrink:0;margin-left:8px;">+</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;background:white;border-radius:14px;padding:14px 16px;box-shadow:0 1px 3px rgba(0,0,0,0.05);border:1px solid #f3f4f6;">
+      <div style="font-size:24px;width:36px;text-align:center;">🥛</div>
+      <div style="flex:1;min-width:0;">
+        <div style="font-weight:600;color:#111827;font-size:15px;">Lait</div>
+        <div style="font-size:12px;color:#9ca3af;">1L · Produits laitiers</div>
+      </div>
+      <div style="width:40px;height:40px;border-radius:50%;border:2px solid #d1d5db;display:flex;align-items:center;justify-content:center;font-size:18px;color:#d1d5db;cursor:pointer;flex-shrink:0;">✓</div>
+      <div style="width:40px;height:40px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:18px;color:white;cursor:pointer;flex-shrink:0;margin-left:8px;">+</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;background:white;border-radius:14px;padding:14px 16px;box-shadow:0 1px 3px rgba(0,0,0,0.05);border:1px solid #f3f4f6;">
+      <div style="font-size:24px;width:36px;text-align:center;">🧀</div>
+      <div style="flex:1;min-width:0;">
+        <div style="font-weight:600;color:#111827;font-size:15px;text-decoration:line-through;">Camembert</div>
+        <div style="font-size:12px;color:#9ca3af;opacity:0.5;">1x · Produits laitiers · ✔ Achete</div>
+      </div>
+      <div style="width:40px;height:40px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:18px;color:white;cursor:pointer;flex-shrink:0;">✓</div>
+      <div style="width:40px;height:40px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:18px;color:white;cursor:pointer;flex-shrink:0;margin-left:8px;">+</div>
+    </div>
+  </div>
+
+  <div style="position:fixed;bottom:68px;left:0;right:0;display:flex;justify-content:center;pointer-events:none;">
+    <div style="pointer-events:auto;width:56px;height:56px;border-radius:50%;border:none;background:#10b981;color:white;font-size:28px;box-shadow:0 4px 14px rgba(16,185,129,0.4);display:flex;align-items:center;justify-content:center;">+</div>
+  </div>
+
+  <div style="position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #f3f4f6;padding:6px 20px 20px;">
+    <div style="display:flex;justify-content:space-around;text-align:center;">
+      <div><span style="font-size:20px;">🏠</span><div style="font-size:10px;color:#d1d5db;">Accueil</div></div>
+      <div><span style="font-size:20px;">📋</span><div style="font-size:10px;color:#10b981;">Courses</div></div>
+      <div><span style="font-size:20px;">⚙️</span><div style="font-size:10px;color:#d1d5db;">Reglages</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ADD COURSE ITEM ========== -->
+<div class="screen" style="background:#f9fafb;">
+  <div style="background:white;padding:48px 20px 16px;border-bottom:1px solid #f3f4f6;">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span style="color:#9ca3af;font-size:16px;cursor:pointer;">← Annuler</span>
+      <h1 style="font-size:18px;font-weight:700;color:#111827;">Ajouter a la liste</h1>
+      <span style="color:#3b82f6;font-size:16px;font-weight:600;cursor:pointer;">OK</span>
+    </div>
+  </div>
+
+  <div style="flex:1;padding:20px;display:flex;flex-direction:column;gap:20px;">
+    <!-- Nom avec autocomplete -->
+    <div>
+      <label style="font-size:12px;font-weight:500;color:#6b7280;margin-bottom:6px;display:block;">Article</label>
+      <div style="position:relative;">
+        <input placeholder="Ex: Lait, Oeufs, Poulet..." value="S" style="width:100%;padding:14px;border-radius:12px;border:1px solid #e5e7eb;font-size:16px;background:white;">
+        <!-- Autocomplete dropdown mock -->
+        <div style="position:absolute;z-index:50;background:white;border:1px solid #e5e7eb;border-radius:12px;margin-top:4px;max-height:200px;overflow-y:auto;box-shadow:0 4px 12px rgba(0,0,0,0.1);width:100%;">
+          <div style="padding:12px 14px;font-size:15px;border-bottom:1px solid #f3f4f6;cursor:pointer;display:flex;justify-content:space-between;">
+            <span>Saumon</span>
+            <span style="color:#9ca3af;font-size:12px;">🐟 Poisson</span>
+          </div>
+          <div style="padding:12px 14px;font-size:15px;border-bottom:1px solid #f3f4f6;cursor:pointer;display:flex;justify-content:space-between;background:#f3f4f6;">
+            <span>Saumon fumé</span>
+            <span style="color:#9ca3af;font-size:12px;">🐟 Poisson</span>
+          </div>
+          <div style="padding:12px 14px;font-size:15px;border-bottom:1px solid #f3f4f6;cursor:pointer;display:flex;justify-content:space-between;">
+            <span>Sardine</span>
+            <span style="color:#9ca3af;font-size:12px;">🐟 Poisson</span>
+          </div>
+          <div style="padding:12px 14px;font-size:15px;border-bottom:1px solid #f3f4f6;cursor:pointer;display:flex;justify-content:space-between;">
+            <span>Saucisse</span>
+            <span style="color:#9ca3af;font-size:12px;">🥩 Viande</span>
+          </div>
+          <div style="padding:12px 14px;font-size:15px;cursor:pointer;display:flex;justify-content:space-between;">
+            <span>Sel</span>
+            <span style="color:#9ca3af;font-size:12px;">🧂 Epices</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quantite -->
+    <div>
+      <label style="font-size:12px;font-weight:500;color:#6b7280;margin-bottom:6px;display:block;">Quantite</label>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <div style="width:40px;height:40px;border-radius:10px;border:1px solid #e5e7eb;background:white;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;">−</div>
+        <input value="1" style="flex:1;padding:14px;border-radius:12px;border:1px solid #e5e7eb;font-size:16px;text-align:center;background:white;">
+        <div style="width:40px;height:40px;border-radius:10px;border:1px solid #e5e7eb;background:white;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;">+</div>
+      </div>
+    </div>
+
+    <!-- Categorie (auto-selected, affichage only) -->
+    <div>
+      <label style="font-size:12px;font-weight:500;color:#6b7280;margin-bottom:6px;display:block;">Categorie</label>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <div style="padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;background:#f3f4f6;color:#6b7280;">🥩 Viande</div>
+        <div style="padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;background:#f3f4f6;color:#6b7280;">🥬 Legumes</div>
+        <div style="padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;background:#f3f4f6;color:#6b7280;">🍎 Fruits</div>
+        <div style="padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;background:#f3f4f6;color:#6b7280;">🧀 Produits laitiers</div>
+        <div style="padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;background:#3b82f6;color:white;">🐟 Poisson</div>
+        <div style="padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;background:#f3f4f6;color:#6b7280;">🥤 Boissons</div>
+        <div style="padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;background:#f3f4f6;color:#6b7280;">🥫 Transforme</div>
+        <div style="padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;background:#f3f4f6;color:#6b7280;">🧂 Epices</div>
+        <div style="padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;background:#f3f4f6;color:#6b7280;">📦 Autres</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #f3f4f6;padding:6px 20px 20px;">
+    <div style="display:flex;justify-content:space-around;text-align:center;">
+      <div><span style="font-size:20px;">🏠</span><div style="font-size:10px;color:#d1d5db;">Accueil</div></div>
+      <div><span style="font-size:20px;">📋</span><div style="font-size:10px;color:#10b981;">Courses</div></div>
+      <div><span style="font-size:20px;">⚙️</span><div style="font-size:10px;color:#d1d5db;">Reglages</div></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

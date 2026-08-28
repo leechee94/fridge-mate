@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Fridge Mate - UI Prototype</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; height: 100dvh; overflow: hidden; }
+.app { display: flex; flex-direction: column; height: 100dvh; max-width: 480px; margin: 0 auto; }
+.page { display: none; flex: 1; overflow-y: auto; padding-bottom: 80px; }
+.page.active { display: block; }
+
+.card { background: white; border-radius: 16px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.nav { background: white; border-top: 1px solid #f1f5f9; padding: 6px 0 20px; display: flex; justify-content: space-around; position: relative; z-index: 10; }
+.nav-item { display: flex; flex-direction: column; align-items: center; border: none; background: none; font-size: 10px; cursor: pointer; padding: 4px 16px; color: #94a3b8; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.nav-item.active { color: #3b82f6; }
+.nav-item span { font-size: 22px; }
+
+.fab { width: 52px; height: 52px; border-radius: 50%; border: none; color: white; font-size: 26px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(59,130,246,0.35); cursor: pointer; position: fixed; bottom: 96px; left: 50%; transform: translateX(-50%); z-index: 20; -webkit-tap-highlight-color: transparent; touch-action: manipulation; transition: transform 0.2s, opacity 0.2s; }
+.fab.hidden { opacity: 0; pointer-events: none; }
+.fab.green { background: #10b981; box-shadow: 0 4px 12px rgba(16,185,129,0.35); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.anim { animation: fadeUp 0.3s ease both; }
+.anim-d1 { animation-delay: 0.05s; }
+.anim-d2 { animation-delay: 0.1s; }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <!-- PAGE: HOME -->
+  <div id="pageHome" class="page active">
+    <div style="padding:52px 20px 12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <h1 style="font-size:24px;font-weight:700;color:#0f172a;">🧊 Frigo de famille Lee</h1>
+        <span style="font-size:12px;color:#94a3b8;">👨‍👩‍👧‍👧</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;padding:0 20px 12px;">
+      <div style="flex:1;background:#eff6ff;border-radius:12px;padding:12px;text-align:center;">
+        <div style="font-size:24px;font-weight:700;color:#2563eb;">0</div>
+        <div style="font-size:11px;color:#60a5fa;">Total</div>
+      </div>
+      <div style="flex:1;background:#fefce8;border-radius:12px;padding:12px;text-align:center;">
+        <div style="font-size:24px;font-weight:700;color:#ca8a04;">0</div>
+        <div style="font-size:11px;color:#eab308;">Bientôt</div>
+      </div>
+      <div style="flex:1;background:#fef2f2;border-radius:12px;padding:12px;text-align:center;">
+        <div style="font-size:24px;font-weight:700;color:#dc2626;">0</div>
+        <div style="font-size:11px;color:#f87171;">Expiré</div>
+      </div>
+    </div>
+    <!-- Empty state with tips -->
+    <div style="padding:0 20px;display:flex;flex-direction:column;align-items:center;gap:8px;">
+      <div style="font-size:56px;margin-top:20px;">🧊</div>
+      <p style="font-size:17px;font-weight:600;color:#0f172a;">Le frigo est vide</p>
+      <p style="font-size:14px;color:#94a3b8;margin-bottom:8px;">Ajoutez vos premiers aliments</p>
+      <div class="card" style="display:flex;align-items:center;gap:12px;padding:14px;width:100%;max-width:280px;">
+        <span style="font-size:22px;">🥛</span>
+        <div><div style="font-size:13px;font-weight:600;color:#0f172a;">Astuce</div><div style="font-size:12px;color:#94a3b8;">Tapez un nom ou choisissez dans la liste</div></div>
+      </div>
+      <div class="card" style="display:flex;align-items:center;gap:12px;padding:14px;width:100%;max-width:280px;">
+        <span style="font-size:22px;">👨‍👩‍👧‍👧</span>
+        <div><div style="font-size:13px;font-weight:600;color:#0f172a;">Partagé</div><div style="font-size:12px;color:#94a3b8;">Synchronisé avec votre partenaire</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE: COURSES -->
+  <div id="pageCourses" class="page">
+    <div style="padding:52px 20px 12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <h1 style="font-size:24px;font-weight:700;color:#0f172a;">📋 Liste</h1>
+        <span style="font-size:13px;color:#94a3b8;background:#f1f5f9;padding:2px 10px;border-radius:10px;">3</span>
+      </div>
+    </div>
+    <div style="padding:0 20px;display:flex;flex-direction:column;gap:10px;">
+      <div class="card anim-d1" style="display:flex;align-items:center;gap:10px;">
+        <span style="font-size:22px;">🥩</span>
+        <div style="flex:1;"><div style="font-weight:600;font-size:15px;color:#0f172a;">Steak haché</div><div style="font-size:12px;color:#94a3b8;">500g</div></div>
+        <button style="width:38px;height:38px;border-radius:50%;border:2px solid #e2e8f0;background:white;font-size:16px;color:#94a3b8;cursor:pointer;">✓</button>
+        <button style="width:38px;height:38px;border-radius:50%;background:#3b82f6;border:none;font-size:16px;color:white;cursor:pointer;">+</button>
+      </div>
+      <div class="card anim-d2" style="display:flex;align-items:center;gap:10px;">
+        <span style="font-size:22px;">🥛</span>
+        <div style="flex:1;"><div style="font-weight:600;font-size:15px;color:#0f172a;">Lait</div><div style="font-size:12px;color:#94a3b8;">1L</div></div>
+        <button style="width:38px;height:38px;border-radius:50%;border:2px solid #e2e8f0;background:white;font-size:16px;color:#94a3b8;cursor:pointer;">✓</button>
+        <button style="width:38px;height:38px;border-radius:50%;background:#3b82f6;border:none;font-size:16px;color:white;cursor:pointer;">+</button>
+      </div>
+      <div class="card" style="display:flex;align-items:center;gap:10px;">
+        <span style="font-size:22px;">🧀</span>
+        <div style="flex:1;"><div style="font-weight:600;font-size:15px;color:#0f172a;text-decoration:line-through;">Camembert</div><div style="font-size:12px;color:#94a3b8;">1x · ✔ Acheté</div></div>
+        <button style="width:38px;height:38px;border-radius:50%;background:#10b981;border:none;font-size:16px;color:white;cursor:pointer;">✓</button>
+        <button style="width:38px;height:38px;border-radius:50%;background:#3b82f6;border:none;font-size:16px;color:white;cursor:pointer;">+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE: SETTINGS -->
+  <div id="pageSettings" class="page">
+    <div style="padding:52px 20px 12px;">
+      <h1 style="font-size:24px;font-weight:700;color:#0f172a;">⚙️ Réglages</h1>
+    </div>
+    <div style="padding:0 20px;display:flex;flex-direction:column;gap:12px;">
+      <div class="card" style="display:flex;align-items:center;justify-content:space-between;">
+        <div><div style="font-weight:600;color:#0f172a;">Mode sombre</div><div style="font-size:13px;color:#94a3b8;">Thème sombre</div></div>
+        <div style="width:46px;height:24px;border-radius:12px;background:#3b82f6;position:relative;"><div style="width:20px;height:20px;border-radius:50%;background:white;position:absolute;right:3px;top:2px;"></div></div>
+      </div>
+      <div class="card"><div style="font-weight:600;color:#0f172a;">👨‍👩‍👧‍👧 Famille</div><div style="font-size:13px;color:#94a3b8;margin-top:4px;">Compte partagé</div></div>
+      <div class="card"><div style="font-weight:600;color:#0f172a;">📦 À propos</div><div style="font-size:13px;color:#94a3b8;margin-top:4px;">Fridge Mate v1.4.3</div></div>
+      <button style="text-align:left;border:none;width:100%;cursor:pointer;" class="card"><div style="display:flex;justify-content:space-between;"><div><div style="font-weight:600;color:#0f172a;">📤 Exporter</div><div style="font-size:13px;color:#94a3b8;">Sauvegarder vos données</div></div><span style="color:#94a3b8;">→</span></div></button>
+    </div>
+  </div>
+
+  <!-- FAB -->
+  <button class="fab" id="fabBtn">+</button>
+
+  <!-- NAV -->
+  <div class="nav">
+    <button class="nav-item active" data-page="pageHome"><span>🏠</span> Accueil</button>
+    <button class="nav-item" data-page="pageCourses"><span>📋</span> Courses</button>
+    <button class="nav-item" data-page="pageSettings"><span>⚙️</span> Réglages</button>
+  </div>
+</div>
+
+<script>
+const pages = { home: 'pageHome', courses: 'pageCourses', settings: 'pageSettings' };
+const navMap = { pageHome: 'home', pageCourses: 'courses', pageSettings: 'settings' };
+let current = 'home';
+
+function show(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pages[id]).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.querySelector(`.nav-item[data-page="${pages[id]}"]`).classList.add('active');
+  current = id;
+  const fab = document.getElementById('fabBtn');
+  fab.classList.toggle('hidden', id === 'settings');
+  fab.classList.toggle('green', id === 'courses');
+}
+
+document.querySelectorAll('.nav-item').forEach(btn => {
+  btn.addEventListener('click', () => show(navMap[btn.dataset.page]));
+});
+</script>
+
+</body>
+</html>

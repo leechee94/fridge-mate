@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fridge Mate - Icon Prototype</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f9fafb; padding: 60px 20px; }
+.card { background: white; border-radius: 16px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.cat-label { display: inline-block; font-size: 11px; color: #9ca3af; margin: 20px 0 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+h2 { font-size: 18px; margin-bottom: 12px; }
+.icon-box { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #4b5563; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<h2>🐟 Viande / Poisson</h2>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-drumstick-bite"></i></div>
+  <div>Poulet</div>
+</div>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-bacon"></i></div>
+  <div>Bacon</div>
+</div>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-fish"></i></div>
+  <div>Saumon</div>
+</div>
+
+<h2>🥬 Legumes</h2>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-carrot"></i></div>
+  <div>Carotte</div>
+</div>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-seedling"></i></div>
+  <div>Haricot vert</div>
+</div>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-pepper-hot"></i></div>
+  <div>Poivron</div>
+</div>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-mushroom"></i></div>
+  <div>Champignon</div>
+</div>
+
+<h2>🍎 Fruits</h2>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-apple-alt"></i></div>
+  <div>Pomme</div>
+</div>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-lemon"></i></div>
+  <div>Citron</div>
+</div>
+
+<h2>🧀 Produits laitiers</h2>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-cheese"></i></div>
+  <div>Camembert</div>
+</div>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-egg"></i></div>
+  <div>Œufs</div>
+</div>
+
+<h2>🥤 Boissons</h2>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-wine-bottle"></i></div>
+  <div>Vin</div>
+</div>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-beer"></i></div>
+  <div>Bière</div>
+</div>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-mug-hot"></i></div>
+  <div>Café</div>
+</div>
+
+<h2>🥫 Transforme / Epices</h2>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-bread-slice"></i></div>
+  <div>Pain</div>
+</div>
+<div class="card">
+  <div class="icon-box"><i class="fas fa-ice-cream"></i></div>
+  <div>Crème glacée</div>
+</div>
+
+<h2>⚠️ 없는 아이콘 — fa-jar / fa-beet 등 (fontawesome에 없음)</h2>
+<div class="card" style="color:#9ca3af;">
+  <div class="icon-box"><i class="fas fa-circle" style="font-size:14px;color:#d1d5db;"></i></div>
+  <span>Yaourt, Radis, Betterave, Prune → fallback 필요</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+import { Food } from '../types/food';
+
+export const mockFoods: Food[] = [
+  {
+    id: '1',
+    name: '우유',
+    quantity: '2개',
+    category: '유제품',
+    added_at: '2026-07-01',
+    expires_at: '2026-07-12',
+  },
+  {
+    id: '2',
+    name: '달걀',
+    quantity: '10개',
+    category: '유제품',
+    added_at: '2026-06-30',
+    expires_at: '2026-07-15',
+  },
+  {
+    id: '3',
+    name: '배추',
+    quantity: '1통',
+    category: '채소/과일',
+    added_at: '2026-07-05',
+    expires_at: '2026-07-10',
+  },
+  {
+    id: '4',
+    name: '삼겹살',
+    quantity: '500g',
+    category: '육류',
+    added_at: '2026-07-06',
+    expires_at: '2026-07-09',
+  },
+  {
+    id: '5',
+    name: '두부',
+    quantity: '2모',
+    category: '가공식품',
+    added_at: '2026-07-03',
+    expires_at: '2026-07-08',
+  },
+  {
+    id: '6',
+    name: '사과',
+    quantity: '5개',
+    category: '채소/과일',
+    added_at: '2026-07-04',
+    expires_at: '2026-07-18',
+  },
+  {
+    id: '7',
+    name: '요거트',
+    quantity: '4개',
+    category: '유제품',
+    added_at: '2026-07-07',
+    expires_at: '2026-07-14',
+  },
+  {
+    id: '8',
+    name: '생수',
+    quantity: '6병',
+    category: '음료',
+    added_at: '2026-07-02',
+    expires_at: '2026-12-31',
+  },
+];

@@ -327,13 +327,13 @@ function exportData() {
     const { data } = await _sb.auth.getSession();
     if (!data || !data.session) {
       if (savedPw) {
-        const { error } = await _sb.auth.signInWithPassword({ email: 'fridge@family.app', password: savedPw });
+        const { error } = await _sb.auth.signInWithPassword({ email: 'chihoon.lee121@gmail.com', password: savedPw });
         if (error) throw new Error(error.message);
       } else {
         // First time - show prompt for password
         const pw = prompt('Mot de passe du frigo:');
         if (pw) {
-          const { error } = await _sb.auth.signInWithPassword({ email: 'fridge@family.app', password: pw });
+          const { error } = await _sb.auth.signInWithPassword({ email: 'chihoon.lee121@gmail.com', password: pw });
           if (error) throw new Error(error.message);
           localStorage.setItem('fridge-pw', pw);
         }
